@@ -24,7 +24,7 @@
 
 'use strict';
 
-var escomplex = require('escomplex-js'),
+var escomplex = require('escomplex'),
     content = require('fs').readFileSync(require.resolve('../'), 'utf-8'),
     opt = { logicalor: false, switchcase: false },
     MAX = 24,
