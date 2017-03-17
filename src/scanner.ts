@@ -341,31 +341,43 @@ export class Scanner {
     // https://tc39.github.io/ecma262/#sec-keywords
 
     private isKeyword(id: string): boolean {
-        switch (id.length) {
-            case 2:
-                return (id === 'if') || (id === 'in') || (id === 'do');
-            case 3:
-                return (id === 'var') || (id === 'for') || (id === 'new') ||
-                    (id === 'try') || (id === 'let');
-            case 4:
-                return (id === 'this') || (id === 'else') || (id === 'case') ||
-                    (id === 'void') || (id === 'with') || (id === 'enum');
-            case 5:
-                return (id === 'while') || (id === 'break') || (id === 'catch') ||
-                    (id === 'throw') || (id === 'const') || (id === 'yield') ||
-                    (id === 'class') || (id === 'super');
-            case 6:
-                return (id === 'return') || (id === 'typeof') || (id === 'delete') ||
-                    (id === 'switch') || (id === 'export') || (id === 'import');
-            case 7:
-                return (id === 'default') || (id === 'finally') || (id === 'extends');
-            case 8:
-                return (id === 'function') || (id === 'continue') || (id === 'debugger');
-            case 10:
-                return (id === 'instanceof');
-            default:
-                return false;
-        }
+        return new Set([
+            'break',
+            'case',
+            'catch',
+            'class',
+            'const',
+            'continue',
+            'debugger',
+            'default',
+            'delete',
+            'do',
+            'else',
+            'enum',
+            'export',
+            'extends',
+            'finally',
+            'for',
+            'function',
+            'if',
+            'import',
+            'in',
+            'instanceof',
+            'let',
+            'new',
+            'return',
+            'super',
+            'switch',
+            'this',
+            'throw',
+            'try',
+            'typeof',
+            'var',
+            'void',
+            'while',
+            'with',
+            'yield'
+        ]).has(id);
     }
 
     private codePointAt(i: number): number {
