@@ -35,7 +35,7 @@ class Reader {
             // binary/unary operators
             '+', '-', '*', '**', '/', '%', '++', '--', '<<', '>>', '>>>', '&',
             '|', '^', '!', '~', '&&', '||', '?', ':', '===', '==', '>=',
-            '<=', '<', '>', '!=', '!=='].indexOf(t) >= 0;
+            '<=', '<', '>', '!=', '!=='].includes(t);
     }
 
     // Determine if forward slash (/) is an operator or part of a regular expression
